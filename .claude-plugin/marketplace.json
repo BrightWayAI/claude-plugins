@@ -1,0 +1,23 @@
+{
+  "name": "claude-plugins",
+  "owner": {
+    "name": "BrightWay AI"
+  },
+  "metadata": {
+    "description": "Plugins built by BrightWay AI"
+  },
+  "plugins": [
+    {
+      "name": "session-memory",
+      "source": "./session-memory",
+      "description": "Persistent working memory across conversations — extracts knowledge, decisions, and context so Claude remembers what matters.",
+      "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "bizdev-outreach",
+      "source": "./bizdev-outreach",
+      "description": "Research a contact and draft personalized business development outreach.",
+      "author": { "name": "BrightWay AI" }
+    }
+  ]
+}

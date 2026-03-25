@@ -1,0 +1,6 @@
+[submodule "session-memory"]
+	path = session-memory
+	url = git@github.com:BrightWayAI/session-memory-plugin.git
+[submodule "bizdev-outreach"]
+	path = bizdev-outreach
+	url = git@github.com:BrightWayAI/Biz-Dev.git
