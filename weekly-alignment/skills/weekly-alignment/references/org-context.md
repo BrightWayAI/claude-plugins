@@ -17,60 +17,38 @@
 
 ## Org Structure
 
-**Teams you manage or oversee:**
-[NOT YET CONFIGURED]
-<!-- e.g.:
-- **Platform Team** (8 people) — owns infrastructure and developer tooling
-- **Product Team** (6 people) — owns user-facing features and roadmap
-- **Data Team** (4 people) — owns pipelines, analytics, ML models
--->
-
-**Key relationships between teams (shared dependencies, handoff points, frequent friction):**
+**Teams:**
 [NOT YET CONFIGURED]
 
 ---
 
 ## Slack Channels to Monitor
 
-**Primary channels (check every scan):**
+**Primary channels (deep read every scan):**
 [NOT YET CONFIGURED]
-<!-- e.g.:
-- #platform-eng — Platform team's main channel
-- #product-dev — Product team daily standups and decisions
-- #data-eng — Data team work and pipeline alerts
-- #leadership — Cross-team decisions and announcements
-- #project-apollo — Current cross-team initiative
--->
 
-**Secondary channels (check when relevant):**
+**Secondary channels (skim for relevant activity):**
 [NOT YET CONFIGURED]
 
 ---
 
 ## What to Watch For
 
-**Types of misalignment that tend to happen in your org:**
+**Selected patterns:**
 [NOT YET CONFIGURED]
-<!-- e.g.:
-- Two teams solving the same problem independently
-- One team making API/schema changes that break another team's assumptions
-- Decisions made in one channel that contradict plans discussed in another
-- Resource conflicts (same person committed to two projects)
-- Timeline assumptions that don't account for upstream dependencies
--->
 
-**Specific ongoing risks or tensions to monitor:**
+**Org-specific patterns:**
+[NOT YET CONFIGURED]
+
+**Specific ongoing risks or tensions:**
 [NOT YET CONFIGURED]
 
 ---
 
 ## Delivery Preferences
 
-**When to deliver:** [NOT YET CONFIGURED]
-<!-- e.g.: Monday morning, 8am ET -->
+**When:** [NOT YET CONFIGURED]
 
-**Where to deliver:** [NOT YET CONFIGURED]
-<!-- e.g.: DM me in Slack, post to #leadership, create a Slack canvas -->
+**Where:** [NOT YET CONFIGURED]
 
-**Format preference:** [NOT YET CONFIGURED]
-<!-- e.g.: short bullet brief, detailed report with recommendations, just flag conflicts -->
+**Detail level:** [NOT YET CONFIGURED]

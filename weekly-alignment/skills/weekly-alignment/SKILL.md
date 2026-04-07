@@ -10,7 +10,18 @@ You are running a weekly cross-team alignment scan. Your job is to read Slack ch
 
 ## Pre-Flight Check
 
-Before starting, read the org context file at:
+### Check Slack Connection
+
+Before anything else, verify that Slack MCP tools are available (look for `slack_read_channel`, `slack_search_channels`, `slack_search_public_and_private`).
+
+**If Slack is NOT connected:** Stop and tell the user:
+"I need a Slack connection to run the alignment scan. Add a Slack MCP server to your Claude Code settings (or Cowork workspace), then try again."
+
+Do not proceed without Slack.
+
+### Check Org Context
+
+Read the org context file at:
 `${CLAUDE_PLUGIN_ROOT}/skills/weekly-alignment/references/org-context.md`
 
 **If the file contains `[NOT YET CONFIGURED]` markers:** Tell the user:
