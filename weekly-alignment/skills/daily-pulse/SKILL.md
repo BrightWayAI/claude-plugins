@@ -22,7 +22,7 @@ Verify that Slack MCP tools are available (`slack_read_channel`, `slack_search_c
 Read the org context file at:
 `${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
 
-**If the file contains `[NOT YET CONFIGURED]` markers:** Tell the user:
+**If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
 Then invoke the Skill tool with skill `weekly-alignment-setup`. Once complete, continue with the pulse check.
 
@@ -79,6 +79,13 @@ Deliver based on the user's preference from org context. If no delivery preferen
 
 If any item looks like it could be a real cross-team conflict, add a note:
 "This might be worth a deeper look — say 'dig into [issue]' for a full investigation, or wait for your next weekly scan."
+
+## Step 4: Save to History
+
+After delivering the pulse, save a copy to:
+`${CLAUDE_PLUGIN_ROOT}/history/pulses/[YYYY-MM-DD].md`
+
+Keep it lightweight — just the pulse output as-is.
 
 ## Notes
 

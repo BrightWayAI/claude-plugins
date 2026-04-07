@@ -22,7 +22,7 @@ Verify that Slack MCP tools are available (`slack_read_channel`, `slack_search_c
 Read the org context file at:
 `${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
 
-**If the file contains `[NOT YET CONFIGURED]` markers:** Tell the user:
+**If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
 Then invoke the Skill tool with skill `weekly-alignment-setup`.
 
@@ -65,17 +65,14 @@ Build a narrative timeline:
 - **What's the blast radius?** Which teams are directly affected? Who else gets impacted downstream?
 - **Is there a deadline that forces a decision?** A launch date, a dependency, a customer commitment?
 
-## Step 5: Recommend a Path Forward
+## Step 5: Suggested Next Step
 
-Provide 2-3 concrete options:
+Based on the investigation, recommend ONE concrete next step. Be specific:
+- Who should talk to whom
+- What decision needs to be made
+- By when (if there's a forcing function)
 
-For each option:
-- **What to do** — specific actions, not vague advice
-- **Who needs to be in the room** — actual people or roles
-- **What gets sacrificed** — every option has a tradeoff, name it
-- **Recommended timeline** — when should this be decided by?
-
-Clearly state which option you'd recommend and why.
+Don't try to produce multiple strategic options with tradeoff analysis — you're working from Slack messages, not strategy documents. One clear, actionable recommendation is more useful than three speculative ones.
 
 ## Step 6: Deliver the Report
 
@@ -101,19 +98,19 @@ Format:
 - **Blast radius:** [teams affected]
 - **Decision deadline:** [date or "no hard deadline"]
 
-### Options
-1. **[Option name]** — [description, tradeoffs, timeline]
-2. **[Option name]** — [description, tradeoffs, timeline]
-3. **[Option name]** — [description, tradeoffs, timeline]
-
-**Recommended:** Option [N] — [why]
-
 ### Suggested Next Step
-[One specific action — e.g., "Schedule a 30-min sync between @alice and @bob this week. Share this report as pre-read."]
+[One concrete recommendation — who should talk to whom, what decision needs to be made, and by when. E.g., "Schedule a 30-min sync between @alice and @bob this week to decide who owns caching. Share this report as pre-read. Decision needed before Thursday's deploy."]
 
 ---
 
 Deliver based on the user's org context preferences. For reports, also offer to create a Slack canvas (`slack_create_canvas`) since these are longer documents worth sharing.
+
+## Save to History
+
+Save the full report to:
+`${CLAUDE_PLUGIN_ROOT}/history/reports/[YYYY-MM-DD]-[short-slug].md`
+
+Where `[short-slug]` is a kebab-case summary of the issue (e.g., `caching-conflict-platform-product`).
 
 ## Notes
 

@@ -13,7 +13,7 @@ You are helping the user quickly update their alignment scanner config — witho
 Read the org context file at:
 `${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
 
-**If the file contains `[NOT YET CONFIGURED]` markers:** Tell the user:
+**If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
 Then invoke the Skill tool with skill `weekly-alignment-setup`. Once complete, return here.
 

@@ -24,7 +24,7 @@ Do not proceed without Slack.
 Read the org context file at:
 `${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
 
-**If the file contains `[NOT YET CONFIGURED]` markers:** Tell the user:
+**If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "Your alignment scanner hasn't been set up yet. Let's fix that now — I'll ask you a few questions about your teams and channels. Takes about 5 minutes."
 
 Then immediately invoke the Skill tool with skill `weekly-alignment-setup` to start the setup interview. Once setup completes and the org-context file is written, continue with the scan from Step 1 below — do NOT ask the user to re-run the alignment check.
@@ -72,6 +72,20 @@ Before cross-referencing, check `${CLAUDE_PLUGIN_ROOT}/history/` for recent scan
 
 If no prior scans exist, skip this step.
 
+Also check `${CLAUDE_PLUGIN_ROOT}/history/pulses/` for daily pulse files from the past 7 days. If pulses exist:
+- Review what was flagged during the week
+- Check if any pulse flags developed into actual conflicts
+- Reference pulse findings in the brief where relevant: "This was first spotted in a daily pulse on [date]"
+
+And check `${CLAUDE_PLUGIN_ROOT}/history/reports/` for any recent deep dive reports. If reports exist:
+- Reference prior investigations: "A deep dive on this issue was done on [date]"
+- Compare current state to what was found in the report
+
+**Resolution tracking:** If a HIGH or MEDIUM finding from the previous scan is NOT detected this week, note it in the brief:
+"✅ [Issue title] (flagged [date]) — not detected this week. May be resolved — confirm with the teams involved."
+
+This closes the loop on previously flagged issues.
+
 ### Default Detection Patterns (Always Check)
 
 Even beyond the user's custom patterns, always scan for:
@@ -109,69 +123,36 @@ Apply each pattern from the "What to Watch For" section of the org context. Thes
 
 Cross-reference the "Specific ongoing risks or tensions to monitor" against what you found. Flag any risk that showed activity this week.
 
-## Step 4: Score and Prioritize Findings
+## Step 4: Prioritize and Produce the Brief
 
-For each misalignment found, assign a severity:
+For each finding, assign severity:
+- **HIGH** — Active conflict or duplicate work in progress. Will cause waste or breakage if not addressed this week.
+- **MEDIUM** — Emerging misalignment. Will become a problem in 1-2 weeks if ignored.
+- **LOW** — Worth noting. A pattern developing, or a minor coordination gap.
 
-- **HIGH** — Active conflict or duplicate work already in progress. Will cause real waste or breakage if not addressed this week.
-- **MEDIUM** — Emerging misalignment. Not yet a problem, but will become one if left alone for another week or two.
-- **LOW** — Worth noting. A pattern that could develop, or a minor coordination gap.
+Sort by severity, then by number of teams affected.
 
-Sort findings by severity, then by how many teams are affected.
+**Formatting the brief:**
 
-## Step 5: Produce the Brief
+Respect the user's **detail level** preference from org context:
+- **Short** — TL;DR + bullet list of findings with severity tags. No elaboration.
+- **Medium** — TL;DR + each finding gets 2-3 sentences of context and a suggested action.
+- **Detailed** — TL;DR + full analysis per finding: what happened, which messages/people, why it matters, suggested action with specifics.
 
-Format the brief according to the user's delivery format preference. If no preference is specified, default to a concise bullet format.
+Regardless of detail level, always include:
+- A TL;DR (1-2 sentences summarizing the week)
+- Severity tags on every finding
+- Specific channel/message references (not vague summaries)
+- Suggested actions for HIGH items
+- Channels scanned and date range at the bottom
+- A "WHAT'S NEXT" footer:
+  - To dig deeper into any finding: "dig into [issue name]"
+  - To update what I'm tracking: "update risks"
+  - For a quick check tomorrow: "daily pulse"
 
-### Brief Structure
+Don't invent a rigid template — let the detail level and findings drive the shape.
 
----
-
-**WEEKLY ALIGNMENT BRIEF — Week of [date range]**
-
-**TL;DR:** [1-2 sentence summary — e.g., "Two significant conflicts found this week. Platform and Product are building overlapping caching solutions. Data team's schema migration timeline conflicts with the Q2 feature launch."]
-
----
-
-**HIGH PRIORITY**
-
-For each HIGH finding:
-### [Short title]
-**Teams involved:** [list]
-**What's happening:** [2-3 sentences describing the conflict, with specific references to what was said in which channels]
-**Why it matters:** [1 sentence on the impact if unaddressed]
-**Suggested action:** [Specific recommendation — e.g., "Get Platform and Product leads in a room this week to decide who owns caching. Recommend Platform since it's closer to their infra mandate."]
-
----
-
-**MEDIUM PRIORITY**
-
-For each MEDIUM finding:
-### [Short title]
-**Teams involved:** [list]
-**What's happening:** [1-2 sentences]
-**Watch for:** [What would escalate this to HIGH]
-
----
-
-**LOW PRIORITY / NOTES**
-
-Bullet list of LOW findings — one line each.
-
----
-
-**CHANNELS SCANNED:** [list of channels checked]
-**PERIOD:** [date range]
-**NEXT SCAN:** [next scheduled date, or "Run manually anytime"]
-
-**WHAT'S NEXT**
-- To dig deeper into any finding: "dig into [issue name]"
-- To update what I'm tracking: "update risks"
-- For a quick check tomorrow: "daily pulse"
-
----
-
-## Step 6: Deliver the Brief
+## Step 5: Deliver the Brief
 
 Based on the delivery preference in the org context:
 
@@ -182,7 +163,7 @@ Based on the delivery preference in the org context:
 
 If Slack delivery is configured but Slack tools are unavailable, present the brief in conversation and note: "I couldn't deliver to Slack — you may need to check your Slack MCP connection."
 
-## Step 6.5: Save to History
+## Step 6: Save to History
 
 After delivering the brief, save a copy to:
 `${CLAUDE_PLUGIN_ROOT}/history/[YYYY-MM-DD].md`

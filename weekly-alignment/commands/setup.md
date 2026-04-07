@@ -134,6 +134,8 @@ Present options, then let them customize:
 Once all answers are collected, write the org-context file at:
 `${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
 
+If the file doesn't exist, copy from `${CLAUDE_PLUGIN_ROOT}/references/org-context.template.md` first, then populate it.
+
 Use this format:
 
 ```markdown
