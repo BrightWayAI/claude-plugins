@@ -1,0 +1,8 @@
+{
+  "name": "weekly-alignment",
+  "version": "1.0.0",
+  "description": "Weekly cross-team alignment scanner. Monitors Slack channels for overlapping initiatives, conflicting priorities, and decisions that affect other teams — then delivers a Monday morning brief.",
+  "author": {
+    "name": "Zach Wagner"
+  }
+}
