@@ -139,6 +139,8 @@ Respect the user's **detail level** preference from org context:
 - **Medium** — TL;DR + each finding gets 2-3 sentences of context and a suggested action.
 - **Detailed** — TL;DR + full analysis per finding: what happened, which messages/people, why it matters, suggested action with specifics.
 
+**Urgent findings:** If any HIGH finding could cause real damage before the next weekly scan (e.g., a deploy scheduled for Tuesday that will break another team's integration), lead with it. Put it above the TL;DR with a clear "ACT TODAY" label and a recommended action.
+
 Regardless of detail level, always include:
 - A TL;DR (1-2 sentences summarizing the week)
 - Severity tags on every finding
@@ -169,10 +171,6 @@ After delivering the brief, save a copy to:
 `${CLAUDE_PLUGIN_ROOT}/history/[YYYY-MM-DD].md`
 
 The saved file should be the full brief content as-is.
-
-## Step 7: Flag Anything Urgent
-
-If any HIGH finding looks like it could cause real damage before the next weekly scan (e.g., a deploy scheduled for Tuesday that will break another team's integration), call it out explicitly at the top of the brief with a recommendation to act today.
 
 ## Notes
 

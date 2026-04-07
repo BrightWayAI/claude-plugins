@@ -63,9 +63,13 @@ After they select, follow up:
 
 Let them split their selection into primary (deep read) and secondary (skim). If they don't distinguish, treat all as primary.
 
-**Then ask:**
+**Then ask about private channels — give them equal weight:**
 
-"Are there any private channels you'd also like me to monitor? I can't see those in the list, so just type the names if so. Otherwise say 'no'."
+"Now — are there private channels I should also be scanning? These are often where the most important conversations happen — leadership channels, project war rooms, cross-team syncs. I can't pull these from the API, so just give me the channel names.
+
+For each one, tell me if it's primary (deep read) or secondary (skim). Or say 'none' if public channels cover it."
+
+Add any private channels to the same primary/secondary lists as the public ones.
 
 ---
 
@@ -133,8 +137,6 @@ Present options, then let them customize:
 
 Once all answers are collected, write the org-context file at:
 `${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
-
-If the file doesn't exist, copy from `${CLAUDE_PLUGIN_ROOT}/references/org-context.template.md` first, then populate it.
 
 Use this format:
 
