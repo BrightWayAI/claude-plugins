@@ -1,5 +1,5 @@
 ---
-name: weekly-alignment
+name: scan
 description: >
   Weekly cross-team alignment scanner. Reads Slack channels configured during setup, identifies overlapping initiatives, conflicting priorities, decisions that affect other teams without their knowledge, and resource conflicts — then delivers a concise Monday morning brief. Use this skill when the user says "run my weekly alignment check", "alignment scan", "weekly alignment", "cross-team check", "what's misaligned", "team alignment brief", or any variation involving checking for cross-team conflicts or overlapping work. Also trigger when a scheduled task invokes this skill.
 ---
@@ -22,7 +22,7 @@ Do not proceed without Slack.
 ### Check Org Context
 
 Read the org context file at:
-`${CLAUDE_PLUGIN_ROOT}/skills/weekly-alignment/references/org-context.md`
+`${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
 
 **If the file contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "Your alignment scanner hasn't been set up yet. Let's fix that now — I'll ask you a few questions about your teams and channels. Takes about 5 minutes."
@@ -45,6 +45,13 @@ For each primary Slack channel listed in the org context:
 
 Take detailed notes. You will cross-reference these across channels in Step 3.
 
+**For high-traffic channels (if a channel has very high message volume):**
+1. First use `slack_search_public_and_private` to search within the channel for keywords related to: decisions, launches, migrations, deadlines, blockers, new projects, and any org-specific patterns from the config
+2. Use `slack_read_thread` to follow the most relevant threads
+3. Only fall back to full `slack_read_channel` for channels with manageable volume
+
+This keeps the scan focused and avoids hitting API limits on busy channels.
+
 ## Step 2: Read Secondary Channels (If Configured)
 
 For each secondary channel:
@@ -56,6 +63,14 @@ For each secondary channel:
 ## Step 3: Cross-Reference and Detect Misalignment
 
 This is the core analysis. Compare activity across ALL channels you read, looking specifically for the misalignment patterns configured in the org context.
+
+### Prior Scan Context
+
+Before cross-referencing, check `${CLAUDE_PLUGIN_ROOT}/history/` for recent scan files. If prior scans exist:
+- Note any HIGH or MEDIUM findings that were flagged in previous weeks and appear again — these are **recurring conflicts** and should be escalated in severity
+- Call out in the brief: "⚠️ This issue was also flagged on [date(s)]. It may need executive attention."
+
+If no prior scans exist, skip this step.
 
 ### Default Detection Patterns (Always Check)
 
@@ -149,6 +164,11 @@ Bullet list of LOW findings — one line each.
 **PERIOD:** [date range]
 **NEXT SCAN:** [next scheduled date, or "Run manually anytime"]
 
+**WHAT'S NEXT**
+- To dig deeper into any finding: "dig into [issue name]"
+- To update what I'm tracking: "update risks"
+- For a quick check tomorrow: "daily pulse"
+
 ---
 
 ## Step 6: Deliver the Brief
@@ -161,6 +181,13 @@ Based on the delivery preference in the org context:
 - **In conversation:** If no Slack delivery preference or Slack is unavailable, present the brief directly in the conversation
 
 If Slack delivery is configured but Slack tools are unavailable, present the brief in conversation and note: "I couldn't deliver to Slack — you may need to check your Slack MCP connection."
+
+## Step 6.5: Save to History
+
+After delivering the brief, save a copy to:
+`${CLAUDE_PLUGIN_ROOT}/history/[YYYY-MM-DD].md`
+
+The saved file should be the full brief content as-is.
 
 ## Step 7: Flag Anything Urgent
 

@@ -1,18 +1,34 @@
 # Weekly Alignment Scanner
 
-A Claude Code skill that monitors your Slack channels for cross-team misalignment and delivers a Monday morning brief.
+A Claude Code plugin that monitors your Slack channels for cross-team misalignment — duplicate work, conflicting decisions, and coordination gaps.
 
 ## What It Does
 
 If you manage across multiple teams, you're in a dozen Slack channels and your reports are each in a dozen different ones. The overlaps and conflicts between those channels are where things go wrong — two teams start solving the same problem, or one team makes a decision that contradicts something another team is already building.
 
-This skill hands that job to Claude. It scans your Slack channels weekly and flags:
+This plugin hands that job to Claude.
+
+## Skills
+
+| Skill | Command | What it does |
+|-------|---------|-------------|
+| **scan** | `run my weekly alignment check` | Full weekly scan — reads all configured Slack channels, cross-references activity, flags conflicts. Produces a prioritized brief with specific actions. |
+| **daily-pulse** | `daily pulse` / `what did I miss` | Quick 24-hour skim. Surfaces anything urgent or noteworthy without full cross-team analysis. |
+| **report** | `dig into [issue]` | Deep dive into a specific conflict. Goes back 14 days, traces the timeline, recommends options. |
+| **update-risks** | `update risks` | Add, remove, or change tracked risks and tensions without re-running the full setup. |
+
+## What It Detects
 
 - **Duplicate work** — two teams building the same thing without knowing
 - **Conflicting decisions** — choices made in one channel that contradict another
 - **Unaware stakeholders** — decisions that affect teams who weren't in the room
 - **Resource conflicts** — same person or team pulled in multiple directions
 - **Dependency gaps** — one team blocked on work another hasn't started
+- **Timeline mismatches** — teams assuming different deadlines for the same thing
+- **Scope creep across teams** — one team's expanding scope eating into another's territory
+- **Communication dead zones** — decisions made in DMs that never surface
+
+Plus whatever org-specific patterns you describe during setup.
 
 ## Setup
 
@@ -23,46 +39,31 @@ This skill hands that job to Claude. It scans your Slack channels weekly and fla
 
 ### Install
 
-1. Copy this `weekly-alignment` folder into your Claude Code plugins directory:
-   ```
-   ~/.claude/plugins/weekly-alignment/
-   ```
-   Or clone it into any project and Claude will discover it automatically.
-
-2. Run the setup interview:
-   ```
-   /weekly-alignment-setup
-   ```
-   This takes ~5 minutes. Claude will ask about your teams, which Slack channels to monitor, and what kinds of misalignment tend to happen in your world. The more specific you are, the better the output.
-
-3. Your answers get saved so the interview doesn't repeat. Run `/weekly-alignment-setup` again anytime to update.
-
-### Run It
-
-**Manually:**
 ```
-run my weekly alignment check
+/plugin marketplace add BrightWayAI/claude-plugins
+/plugin install weekly-alignment@claude-plugins
 ```
 
-**On a schedule (recommended):**
+Or copy this `weekly-alignment` folder into your Claude Code plugins directory.
+
+### First Run
+
+Just say `run my weekly alignment check`. If you haven't set up yet, the scanner will automatically start the setup interview — no extra step needed.
+
+Or run setup explicitly:
+```
+/weekly-alignment-setup
+```
+
+Setup takes ~5 minutes. Claude pulls your Slack channels live from the API (so you pick from a list instead of typing names), asks about your teams, and captures what kinds of misalignment happen in your org. Your answers get saved so the interview doesn't repeat.
+
+### Schedule It
+
 ```
 /schedule
 ```
-Set it to run every Monday morning. Now you start each week with a brief on what's misaligned before it becomes a problem.
 
-## How It Works
-
-1. **Reads** your configured Slack channels (last 7 days)
-2. **Extracts** decisions, new work, blockers, and commitments from each channel
-3. **Cross-references** across all channels to find conflicts, overlaps, and gaps
-4. **Applies** your org-specific misalignment patterns (the ones you described during setup)
-5. **Delivers** a prioritized brief — HIGH / MEDIUM / LOW — with specific references and suggested actions
-
-## Customization
-
-The setup interview captures your org's specific patterns. If your world changes — new teams, new channels, new risks — just run `/weekly-alignment-setup` again.
-
-The skill is intentionally specific: it watches for the things YOU told it matter, not generic "team health" metrics. That's why the setup interview matters.
+Set the scan to run every Monday morning. Now you start each week with a brief on what's misaligned before it becomes a problem.
 
 ## Example Output
 
@@ -86,6 +87,12 @@ infrastructure for overlapping use cases.
 Suggested action: Get Platform and Product leads in a room this week to
 decide who owns caching.
 ```
+
+## Customization
+
+Run `/weekly-alignment-setup` again anytime your org changes — new teams, new channels, new risks.
+
+For quick updates to what you're tracking (without re-running the full interview), use `/weekly-alignment:update-risks`.
 
 ## License
 
