@@ -1,6 +1,6 @@
 # Org Context — Weekly Alignment Scanner
 
-> This file is populated by running `/weekly-alignment:setup`. If you see `[NOT YET CONFIGURED]` below, the plugin has not been personalized yet.
+> This file is populated by running `/weekly-alignment-setup`. If you see `[NOT YET CONFIGURED]` below, the plugin has not been personalized yet.
 
 ---
 

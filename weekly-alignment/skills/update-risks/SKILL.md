@@ -1,5 +1,5 @@
 ---
-name: update-risks
+name: weekly-alignment-update-config
 description: >
   Quickly update any part of the alignment scanner config — risks, tensions, teams, channels, delivery preferences, or watch patterns — without re-running the full setup interview. Use when the user says "update risks", "add a risk", "new tension", "remove risk", "things changed", "update what to watch for", "update config", "change delivery", "update teams", "change channels", "update preferences", "add a channel", "remove a team", or any variation of modifying the scanner configuration.
 ---
@@ -15,7 +15,7 @@ Read the org context file at:
 
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
-Then invoke the Skill tool with skill `weekly-alignment:setup`. Once complete, return here.
+Then invoke the Skill tool with skill `weekly-alignment-setup`. Once complete, return here.
 
 **If configured:** Proceed.
 
@@ -69,7 +69,7 @@ Accept multiple changes in one go. Confirm what you heard:
 
 Sound right?"
 
-**Note:** For major org restructuring (like completely new team structure, new role, or wholesale channel overhaul), recommend running the full `/weekly-alignment:setup` instead — it's designed for that level of change.
+**Note:** For major org restructuring (like completely new team structure, new role, or wholesale channel overhaul), recommend running the full `/weekly-alignment-setup` instead — it's designed for that level of change.
 
 ## Step 3: Write Updates
 
@@ -84,4 +84,4 @@ Update the "Last updated" date at the top of the file.
 
 "Updated. Your next scan will pick up these changes. Want me to run a quick pulse check now to see if anything's already showing up?"
 
-If they say yes, invoke the Skill tool with skill `weekly-alignment:daily-pulse`.
+If they say yes, invoke the Skill tool with skill `weekly-alignment-daily-pulse`.

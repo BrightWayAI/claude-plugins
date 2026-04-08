@@ -1,5 +1,5 @@
 ---
-name: report
+name: weekly-alignment-report
 description: >
   Deep dive into a specific cross-team conflict or alignment issue. Use when the user says "dig into", "deep dive", "tell me more about", "investigate the conflict between", "report on", or any variation of wanting a detailed analysis of a specific misalignment — not a broad scan, but a focused investigation of one issue.
 ---
@@ -24,7 +24,7 @@ Read the org context file at:
 
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
-Then invoke the Skill tool with skill `weekly-alignment:setup`.
+Then invoke the Skill tool with skill `weekly-alignment-setup`.
 
 **If configured:** Proceed.
 
@@ -117,9 +117,9 @@ Where `[short-slug]` is a kebab-case summary of the issue (e.g., `caching-confli
 - **Go deep.** This is the opposite of the daily pulse. Read threads, follow conversations, trace decisions back to their origin.
 - **Name names.** Reference specific people, messages, and dates. This report needs to be actionable, not abstract.
 - **Be fair.** Present both sides. Don't frame one team as "wrong" — frame the situation as a coordination gap.
-- **Offer to update risks.** If this investigation reveals something that should be added to the ongoing risk tracker, offer to run `weekly-alignment:update-risks`.
+- **Offer to update risks.** If this investigation reveals something that should be added to the ongoing risk tracker, offer to run `weekly-alignment-update-config`.
 
 After delivering the report, offer:
 "Want me to add this to your tracked risks so the weekly scan keeps an eye on it? Just say 'yes' and I'll update your config."
 
-If they say yes, invoke the Skill tool with skill `weekly-alignment:update-risks`.
+If they say yes, invoke the Skill tool with skill `weekly-alignment-update-config`.

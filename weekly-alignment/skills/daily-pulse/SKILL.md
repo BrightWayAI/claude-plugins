@@ -1,5 +1,5 @@
 ---
-name: daily-pulse
+name: weekly-alignment-daily-pulse
 description: >
   Quick daily check across monitored Slack channels. Lighter than the full weekly scan — skims for anything urgent or noteworthy since yesterday. Use when the user says "daily pulse", "quick check", "anything happening today", "daily alignment", "what did I miss", or any variation of a quick cross-team status check.
 ---
@@ -24,7 +24,7 @@ Read the org context file at:
 
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
-Then invoke the Skill tool with skill `weekly-alignment:setup`. Once complete, continue with the pulse check.
+Then invoke the Skill tool with skill `weekly-alignment-setup`. Once complete, continue with the pulse check.
 
 **If configured:** Proceed.
 
@@ -91,4 +91,4 @@ Keep it lightweight — just the pulse output as-is.
 
 - This is NOT the weekly scan. Don't try to do full cross-team analysis.
 - Speed > thoroughness. Get in, get out, surface the signal.
-- If something looks like a real conflict, flag it and suggest running the full `/weekly-alignment:scan` for deeper analysis.
+- If something looks like a real conflict, flag it and suggest running the full `/weekly-alignment-scan` for deeper analysis.

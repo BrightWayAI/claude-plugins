@@ -1,5 +1,5 @@
 ---
-name: setup
+name: weekly-alignment-setup
 description: >
   Set up or update your Weekly Alignment Scanner. Interviews you about your org structure, picks Slack channels to monitor via the Slack API, and captures what kinds of cross-team misalignment to watch for. Run this on first use or anytime your org changes.
 ---
@@ -13,6 +13,7 @@ You are running the onboarding flow for the Weekly Alignment Scanner plugin. You
 - Be conversational — this should feel like a quick intake call, not a form.
 - When presenting options, use numbered lists so the user can just reply with numbers.
 - After every selection question, follow up with an open-ended probe for nuance.
+- **Use what you already know.** Before asking any question, check if you already have the answer from context — the user's Slack profile, prior conversations, session memory, or anything else available. If you know something, pre-fill it and confirm instead of asking from scratch.
 
 ---
 
@@ -21,7 +22,7 @@ You are running the onboarding flow for the Weekly Alignment Scanner plugin. You
 Before asking any questions, check if Slack MCP tools are available (look for `slack_read_channel`, `slack_search_channels`, `slack_search_public_and_private`).
 
 **If Slack is NOT connected:** Stop and tell the user:
-"I need a Slack connection to set this up — the scanner reads your channels directly. Add a Slack MCP server to your Claude Code settings (or Cowork workspace), then run `/weekly-alignment:setup` again."
+"I need a Slack connection to set this up — the scanner reads your channels directly. Add a Slack MCP server to your Claude Code settings (or Cowork workspace), then run `/weekly-alignment-setup` again."
 
 Do not proceed with the interview if Slack is not connected.
 
@@ -31,17 +32,32 @@ Do not proceed with the interview if Slack is not connected.
 
 ## Step 1: Who Are You?
 
+Before asking, check what you already know about the user from:
+- Their Slack profile (use `slack_read_user_profile` if available)
+- Prior conversations or session memory
+- Any context already available in the conversation
+
+**If you already have their name, title, and role:** Pre-fill and confirm:
+"Based on what I know, you're [name], [title], overseeing [scope]. Sound right, or should I update anything?"
+
+**If you don't have enough context:** Ask openly:
 "Let's set up your weekly alignment scanner. First — what's your name, title, and what do you oversee? Just give me the quick version."
 
-One open-ended question. Extract their name, title, and scope of responsibility from whatever they say.
+Extract their name, title, and scope of responsibility from whatever they say or confirm.
 
 ---
 
 ## Step 2: Your Teams
 
+Again, check what you already know — from Slack channels (team-named channels can signal org structure), prior conversations, or session memory.
+
+**If you can infer the teams:** Pre-fill and confirm:
+"From what I can see, your teams include [team list]. Is that right? Anything missing or wrong?"
+
+**If you can't infer:** Ask openly:
 "What teams do you have visibility into? Give me the team names and roughly what each one owns — I'll organize it from there."
 
-One open-ended question. Extract team names, sizes (if mentioned), and ownership areas. Don't force a specific format.
+Extract team names, sizes (if mentioned), and ownership areas. Don't force a specific format.
 
 ---
 
@@ -213,4 +229,4 @@ After writing the file, show the user a summary:
 **To run your first scan now:** say 'run my weekly alignment check'
 **To schedule it:** say '/schedule' and set it for [their preferred timing]
 **To make quick config changes:** say 'update risks' or 'update config'
-**To redo setup from scratch:** run '/weekly-alignment:setup' again"
+**To redo setup from scratch:** run '/weekly-alignment-setup' again"
