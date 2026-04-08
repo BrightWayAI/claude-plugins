@@ -20,7 +20,7 @@ Verify that Slack MCP tools are available (`slack_read_channel`, `slack_search_c
 ### Check Org Context
 
 Read the org context file at:
-`${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
+`${CLAUDE_PLUGIN_DATA}/references/org-context.md`
 
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
@@ -83,7 +83,7 @@ If any item looks like it could be a real cross-team conflict, add a note:
 ## Step 4: Save to History
 
 After delivering the pulse, save a copy to:
-`${CLAUDE_PLUGIN_ROOT}/history/pulses/[YYYY-MM-DD].md`
+`${CLAUDE_PLUGIN_DATA}/history/pulses/[YYYY-MM-DD].md`
 
 Keep it lightweight — just the pulse output as-is.
 

@@ -22,7 +22,7 @@ Do not proceed without Slack.
 ### Check Org Context
 
 Read the org context file at:
-`${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
+`${CLAUDE_PLUGIN_DATA}/references/org-context.md`
 
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "Your alignment scanner hasn't been set up yet. Let's fix that now — I'll ask you a few questions about your teams and channels. Takes about 5 minutes."
@@ -66,18 +66,18 @@ This is the core analysis. Compare activity across ALL channels you read, lookin
 
 ### Prior Scan Context
 
-Before cross-referencing, check `${CLAUDE_PLUGIN_ROOT}/history/` for recent scan files. If prior scans exist:
+Before cross-referencing, check `${CLAUDE_PLUGIN_DATA}/history/` for recent scan files. If prior scans exist:
 - Note any HIGH or MEDIUM findings that were flagged in previous weeks and appear again — these are **recurring conflicts** and should be escalated in severity
 - Call out in the brief: "⚠️ This issue was also flagged on [date(s)]. It may need executive attention."
 
 If no prior scans exist, skip this step.
 
-Also check `${CLAUDE_PLUGIN_ROOT}/history/pulses/` for daily pulse files from the past 7 days. If pulses exist:
+Also check `${CLAUDE_PLUGIN_DATA}/history/pulses/` for daily pulse files from the past 7 days. If pulses exist:
 - Review what was flagged during the week
 - Check if any pulse flags developed into actual conflicts
 - Reference pulse findings in the brief where relevant: "This was first spotted in a daily pulse on [date]"
 
-And check `${CLAUDE_PLUGIN_ROOT}/history/reports/` for any recent deep dive reports. If reports exist:
+And check `${CLAUDE_PLUGIN_DATA}/history/reports/` for any recent deep dive reports. If reports exist:
 - Reference prior investigations: "A deep dive on this issue was done on [date]"
 - Compare current state to what was found in the report
 
@@ -168,7 +168,7 @@ If Slack delivery is configured but Slack tools are unavailable, present the bri
 ## Step 6: Save to History
 
 After delivering the brief, save a copy to:
-`${CLAUDE_PLUGIN_ROOT}/history/[YYYY-MM-DD].md`
+`${CLAUDE_PLUGIN_DATA}/history/[YYYY-MM-DD].md`
 
 The saved file should be the full brief content as-is.
 

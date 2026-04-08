@@ -20,7 +20,7 @@ Verify that Slack MCP tools are available (`slack_read_channel`, `slack_search_c
 ### Check Org Context
 
 Read the org context file at:
-`${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
+`${CLAUDE_PLUGIN_DATA}/references/org-context.md`
 
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
@@ -108,7 +108,7 @@ Deliver based on the user's org context preferences. For reports, also offer to 
 ## Save to History
 
 Save the full report to:
-`${CLAUDE_PLUGIN_ROOT}/history/reports/[YYYY-MM-DD]-[short-slug].md`
+`${CLAUDE_PLUGIN_DATA}/history/reports/[YYYY-MM-DD]-[short-slug].md`
 
 Where `[short-slug]` is a kebab-case summary of the issue (e.g., `caching-conflict-platform-product`).
 

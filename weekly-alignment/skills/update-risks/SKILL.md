@@ -11,7 +11,7 @@ You are helping the user quickly update their alignment scanner config — witho
 ## Pre-Flight Check
 
 Read the org context file at:
-`${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
+`${CLAUDE_PLUGIN_DATA}/references/org-context.md`
 
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
@@ -74,7 +74,7 @@ Sound right?"
 ## Step 3: Write Updates
 
 Update the org context file at:
-`${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
+`${CLAUDE_PLUGIN_DATA}/references/org-context.md`
 
 Only modify the sections that changed. Do NOT touch other sections unless the user explicitly asked to change them.
 

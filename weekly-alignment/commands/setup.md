@@ -136,7 +136,7 @@ Present options, then let them customize:
 ## Step 7: Write the Context File
 
 Once all answers are collected, write the org-context file at:
-`${CLAUDE_PLUGIN_ROOT}/references/org-context.md`
+`${CLAUDE_PLUGIN_DATA}/references/org-context.md`
 
 Use this format:
 
