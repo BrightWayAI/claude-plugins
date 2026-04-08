@@ -14,8 +14,8 @@ This plugin hands that job to Claude.
 |-------|---------|-------------|
 | **scan** | `run my weekly alignment check` | Full weekly scan — reads all configured Slack channels, cross-references activity, flags conflicts. Produces a prioritized brief with specific actions. |
 | **daily-pulse** | `daily pulse` / `what did I miss` | Quick 24-hour skim. Surfaces anything urgent or noteworthy without full cross-team analysis. |
-| **report** | `dig into [issue]` | Deep dive into a specific conflict. Goes back 14 days, traces the timeline, recommends options. |
-| **update-risks** | `update risks` | Add, remove, or change tracked risks and tensions without re-running the full setup. |
+| **report** | `dig into [issue]` | Deep dive into a specific conflict. Goes back 14 days, traces the timeline, recommends a concrete next step. |
+| **update-risks** | `update risks` / `update config` | Quickly update any part of your scanner config — risks, channels, teams, patterns, delivery preferences — without re-running the full setup. |
 
 ## What It Detects
 

@@ -212,4 +212,5 @@ After writing the file, show the user a summary:
 
 **To run your first scan now:** say 'run my weekly alignment check'
 **To schedule it:** say '/schedule' and set it for [their preferred timing]
-**To update this config:** run '/weekly-alignment-setup' again"
+**To make quick config changes:** say 'update risks' or 'update config'
+**To redo setup from scratch:** run '/weekly-alignment-setup' again"
