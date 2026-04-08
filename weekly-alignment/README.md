@@ -52,7 +52,7 @@ Just say `run my weekly alignment check`. If you haven't set up yet, the scanner
 
 Or run setup explicitly:
 ```
-/weekly-alignment-setup
+/weekly-alignment:setup
 ```
 
 Setup takes ~5 minutes. Claude pulls your Slack channels live from the API (so you pick from a list instead of typing names), asks about your teams, and captures what kinds of misalignment happen in your org. Your answers get saved so the interview doesn't repeat.
@@ -90,7 +90,7 @@ decide who owns caching.
 
 ## Customization
 
-Run `/weekly-alignment-setup` again anytime your org changes — new teams, new channels, new risks.
+Run `/weekly-alignment:setup` again anytime your org changes — new teams, new channels, new risks.
 
 For quick updates to what you're tracking (without re-running the full interview), use `/weekly-alignment:update-risks`.
 

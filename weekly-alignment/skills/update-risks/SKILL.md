@@ -15,7 +15,7 @@ Read the org context file at:
 
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
-Then invoke the Skill tool with skill `weekly-alignment-setup`. Once complete, return here.
+Then invoke the Skill tool with skill `weekly-alignment:setup`. Once complete, return here.
 
 **If configured:** Proceed.
 
@@ -69,7 +69,7 @@ Accept multiple changes in one go. Confirm what you heard:
 
 Sound right?"
 
-**Note:** For major org restructuring (like completely new team structure, new role, or wholesale channel overhaul), recommend running the full `/weekly-alignment-setup` instead — it's designed for that level of change.
+**Note:** For major org restructuring (like completely new team structure, new role, or wholesale channel overhaul), recommend running the full `/weekly-alignment:setup` instead — it's designed for that level of change.
 
 ## Step 3: Write Updates
 

@@ -1,12 +1,11 @@
 {
   "name": "weekly-alignment",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Weekly cross-team alignment scanner. Monitors Slack channels for overlapping initiatives, conflicting priorities, and decisions that affect other teams — then delivers a Monday morning brief.",
   "author": {
     "name": "Zach Wagner"
   },
   "license": "MIT",
   "repository": "https://github.com/BrightWayAI/claude-plugins",
-  "skills": "./skills/",
-  "commands": "./commands/"
+  "skills": "./skills/"
 }

@@ -24,7 +24,7 @@ Read the org context file at:
 
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "You haven't set up your alignment scanner yet. Let's do that first."
-Then invoke the Skill tool with skill `weekly-alignment-setup`. Once complete, continue with the pulse check.
+Then invoke the Skill tool with skill `weekly-alignment:setup`. Once complete, continue with the pulse check.
 
 **If configured:** Proceed.
 

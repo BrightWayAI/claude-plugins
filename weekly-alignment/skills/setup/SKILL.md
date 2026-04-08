@@ -1,5 +1,5 @@
 ---
-name: weekly-alignment-setup
+name: setup
 description: >
   Set up or update your Weekly Alignment Scanner. Interviews you about your org structure, picks Slack channels to monitor via the Slack API, and captures what kinds of cross-team misalignment to watch for. Run this on first use or anytime your org changes.
 ---
@@ -21,7 +21,7 @@ You are running the onboarding flow for the Weekly Alignment Scanner plugin. You
 Before asking any questions, check if Slack MCP tools are available (look for `slack_read_channel`, `slack_search_channels`, `slack_search_public_and_private`).
 
 **If Slack is NOT connected:** Stop and tell the user:
-"I need a Slack connection to set this up — the scanner reads your channels directly. Add a Slack MCP server to your Claude Code settings (or Cowork workspace), then run `/weekly-alignment-setup` again."
+"I need a Slack connection to set this up — the scanner reads your channels directly. Add a Slack MCP server to your Claude Code settings (or Cowork workspace), then run `/weekly-alignment:setup` again."
 
 Do not proceed with the interview if Slack is not connected.
 
@@ -213,4 +213,4 @@ After writing the file, show the user a summary:
 **To run your first scan now:** say 'run my weekly alignment check'
 **To schedule it:** say '/schedule' and set it for [their preferred timing]
 **To make quick config changes:** say 'update risks' or 'update config'
-**To redo setup from scratch:** run '/weekly-alignment-setup' again"
+**To redo setup from scratch:** run '/weekly-alignment:setup' again"

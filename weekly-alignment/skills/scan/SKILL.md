@@ -27,7 +27,7 @@ Read the org context file at:
 **If the file does not exist at all, or contains `[NOT YET CONFIGURED]` markers:** Tell the user:
 "Your alignment scanner hasn't been set up yet. Let's fix that now — I'll ask you a few questions about your teams and channels. Takes about 5 minutes."
 
-Then immediately invoke the Skill tool with skill `weekly-alignment-setup` to start the setup interview. Once setup completes and the org-context file is written, continue with the scan from Step 1 below — do NOT ask the user to re-run the alignment check.
+Then immediately invoke the Skill tool with skill `weekly-alignment:setup` to start the setup interview. Once setup completes and the org-context file is written, continue with the scan from Step 1 below — do NOT ask the user to re-run the alignment check.
 
 **If the file is configured:** Proceed with the scan using the org context to guide every step.
 
