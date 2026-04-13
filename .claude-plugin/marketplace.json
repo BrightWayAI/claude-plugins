@@ -8,9 +8,9 @@
   },
   "plugins": [
     {
-      "name": "session-memory",
-      "source": "./session-memory",
-      "description": "Persistent working memory across conversations — extracts knowledge, decisions, and context so Claude remembers what matters.",
+      "name": "claude-cortex",
+      "source": "./claude-cortex",
+      "description": "Always-on learning system — Claude gets smarter about you with every conversation. Passively observes preferences, captures knowledge, and adapts.",
       "author": { "name": "BrightWay AI" }
     },
     {
