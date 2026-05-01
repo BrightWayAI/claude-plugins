@@ -4,3 +4,6 @@
 [submodule "claude-cortex"]
 	path = claude-cortex
 	url = git@github.com:BrightWayAI/claude-cortex.git
+[submodule "lead-engine"]
+	path = lead-engine
+	url = git@github.com:BrightWayAI/lead-engine.git
