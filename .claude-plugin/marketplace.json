@@ -31,6 +31,15 @@
       },
       "description": "Turn your LinkedIn network into a warm-lead engine. Catches buying signals, warms prospects via comments and connection requests, drafts DMs in your voice, runs a 3-touch cadence, and generates pre-call briefs.",
       "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "weekly-alignment",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/weekly-alignment"
+      },
+      "description": "Weekly cross-team alignment scanner. Monitors Slack channels for overlapping initiatives, conflicting priorities, and decisions that affect other teams — then delivers a Monday morning brief.",
+      "author": { "name": "BrightWay AI" }
     }
   ]
 }
