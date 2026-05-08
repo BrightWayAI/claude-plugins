@@ -58,6 +58,33 @@
       },
       "description": "Curate and draft a weekly LinkedIn news roundup. News Curator (subagent) scans newsletters and the open web for the week's most important stories ranked for your audience. Post Assembler (subagent) drafts the post in your voice. Configurable per user via /setup-news.",
       "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "plan-tomorrow",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/plan-tomorrow"
+      },
+      "description": "Calendar-first daily planning. Pulls CRM tasks, working memory context, and inbox action items, then creates time blocks on your calendar with full context baked in. The calendar IS the plan. Delegates CRM scoring to pipeline-analyst (brightway-core) when installed. Configurable per user via /setup-plan.",
+      "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "weekly-outreach",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/weekly-outreach"
+      },
+      "description": "Weekly relationship management and BD prep. Pulls from CRM, email, and calendar; produces a prioritized outreach plan in chat plus CRM tasks and calendar placeholders. Delegates pipeline analysis to pipeline-analyst and per-contact research to contact-researcher when installed. Configurable per user via /setup-outreach.",
+      "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "project-setup",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/project-setup"
+      },
+      "description": "End-to-end client engagement initialization. Interviews you about a new engagement, then produces Drive folder structure, Claude Project system prompt, phased project plan with immediate next step, and a memory node (if claude-cortex is installed). Templates are user-customizable for your offerings. Configurable per user via /setup-projects.",
+      "author": { "name": "BrightWay AI" }
     }
   ]
 }
