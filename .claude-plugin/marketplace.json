@@ -94,6 +94,24 @@
       },
       "description": "Calendar-driven time tracking and monthly invoice generation. /track-time pulls calendar events, classifies billable time per client, logs to ~/Documents/Claude/time-log.csv. /generate-invoices reads the log, applies each client's billing model, drafts invoices ready for delivery. Closes the calendar-to-money loop. Configurable per user via /setup-time.",
       "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "client-status",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/client-status"
+      },
+      "description": "Weekly client status updates auto-drafted from cortex memory, project-setup engagement data, calendar, and CRM activity. /client-status produces a draft per active engagement (what we did, what we learned, what's next, anything we need from you). User reviews and sends. Closes the retention loop most consultants leave on the table.",
+      "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "referral-engine",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/referral-engine"
+      },
+      "description": "Latent revenue engine. /referrals produces a weekly digest of connectors gone quiet, recent positive moments worth following up, fiscal-year and seasonal triggers — caps at top 3 actions for the week. /referral-ask drafts a voice-faithful ask for a specific connector. Honors cooling periods. Configurable per user via /setup-referrals.",
+      "author": { "name": "BrightWay AI" }
     }
   ]
 }
