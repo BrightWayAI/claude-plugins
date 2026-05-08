@@ -42,10 +42,10 @@
       "author": { "name": "BrightWay AI" }
     },
     {
-      "name": "brightway-core",
+      "name": "core-ops",
       "source": {
         "source": "github",
-        "repo": "BrightWayAI/core"
+        "repo": "BrightWayAI/core-ops"
       },
       "description": "Generic business-ops toolkit. Pipeline Analyst (subagent) ranks your CRM pipeline by recency × signal × stage. Deliverable Reviewer (slash command) runs a structured QA pass on client decks/docs/spreadsheets against your brand guide. Configurable per user via /setup-core.",
       "author": { "name": "BrightWay AI" }
@@ -65,7 +65,7 @@
         "source": "github",
         "repo": "BrightWayAI/plan-tomorrow"
       },
-      "description": "Calendar-first daily planning. Pulls CRM tasks, working memory context, and inbox action items, then creates time blocks on your calendar with full context baked in. The calendar IS the plan. Delegates CRM scoring to pipeline-analyst (brightway-core) when installed. Configurable per user via /setup-plan.",
+      "description": "Calendar-first daily planning. Pulls CRM tasks, working memory context, and inbox action items, then creates time blocks on your calendar with full context baked in. The calendar IS the plan. Delegates CRM scoring to pipeline-analyst (core-ops) when installed. Configurable per user via /setup-plan.",
       "author": { "name": "BrightWay AI" }
     },
     {

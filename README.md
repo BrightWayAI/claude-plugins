@@ -16,7 +16,7 @@ Then install plugins individually:
 
 ```
 /plugin install claude-cortex@claude-plugins
-/plugin install brightway-core@claude-plugins
+/plugin install core-ops@claude-plugins
 /plugin install lead-engine@claude-plugins
 ... (etc — see "What's in the marketplace" below)
 ```
@@ -68,10 +68,10 @@ Nine plugins, organized by what they do.
 
 | Plugin | What it does | Setup |
 |---|---|---|
-| **[brightway-core](https://github.com/BrightWayAI/core)** | Shared business-ops toolkit. Pipeline analyst (subagent) ranks your CRM pipeline. Deliverable reviewer (slash command) runs structured QA on client decks/docs/spreadsheets against your brand. | `/setup-core` |
+| **[core-ops](https://github.com/BrightWayAI/core-ops)** | Shared business-ops toolkit. Pipeline analyst (subagent) ranks your CRM pipeline. Deliverable reviewer (slash command) runs structured QA on client decks/docs/spreadsheets against your brand. | `/setup-core` |
 | **[weekly-alignment](https://github.com/BrightWayAI/weekly-alignment)** | Weekly cross-team alignment scanner for Slack. Surfaces overlapping initiatives, conflicting priorities, and decisions that affect other teams. Delivers a Monday morning brief. | `/setup` (via skills) |
 
-**Hosts subagent:** `pipeline-analyst` (in brightway-core — CRM-agnostic pipeline ranking).
+**Hosts subagent:** `pipeline-analyst` (in core-ops — CRM-agnostic pipeline ranking).
 
 ---
 
@@ -86,7 +86,7 @@ Each plugin is independently useful, but several get sharper when paired. Subage
 | `memory-librarian` | claude-cortex | `/search` (cortex) — broad cross-node queries |
 | `transcript-reviewer` | claude-cortex | weekly call commitment audit |
 | `contact-researcher` | lead-engine | `/bizdev-outreach`, `/lead-brief`, `/lead-pull`, `/weekly-outreach`, any "research [contact]" workflow |
-| `pipeline-analyst` | brightway-core | `/weekly-outreach`, `/plan-tomorrow`, any pipeline-review workflow |
+| `pipeline-analyst` | core-ops | `/weekly-outreach`, `/plan-tomorrow`, any pipeline-review workflow |
 | `news-curator` + `post-assembler` | news-curator | `/ai-roundup` |
 
 When a parent skill needs deep research, it delegates to a subagent rather than doing the research inline. This keeps the main conversation context clean and produces consistent structured output across skills.
@@ -95,13 +95,13 @@ When a parent skill needs deep research, it delegates to a subagent rather than 
 
 **Solo consultant / founder running BD on Claude:**
 ```
-claude-cortex + brightway-core + lead-engine + bizdev-outreach + weekly-outreach
+claude-cortex + core-ops + lead-engine + bizdev-outreach + weekly-outreach
 ```
 Memory + pipeline analysis + signal-driven outbound + per-contact drafting + weekly prep.
 
 **Agency operator with multiple client engagements:**
 ```
-claude-cortex + brightway-core + project-setup + weekly-outreach + plan-tomorrow
+claude-cortex + core-ops + project-setup + weekly-outreach + plan-tomorrow
 ```
 Memory + pipeline + new-engagement onboarding + BD + daily calendar.
 
@@ -113,11 +113,11 @@ Memory + weekly LinkedIn roundup + per-contact outreach.
 
 **Cross-team operator (manager / chief-of-staff):**
 ```
-claude-cortex + weekly-alignment + plan-tomorrow + brightway-core
+claude-cortex + weekly-alignment + plan-tomorrow + core-ops
 ```
 Memory + Slack alignment scan + daily calendar + deliverable QA.
 
-**Minimum viable starter:** claude-cortex + brightway-core. Everything else builds on top.
+**Minimum viable starter:** claude-cortex + core-ops. Everything else builds on top.
 
 ---
 
@@ -128,7 +128,7 @@ Most plugins ship with a `/setup-*` command that interviews you and saves your c
 | Plugin | Setup command | Captures |
 |---|---|---|
 | claude-cortex | (auto — works out of the box) | Memory layout configures itself per project |
-| brightway-core | `/setup-core` | CRM, brand, voice, deliverable conventions |
+| core-ops | `/setup-core` | CRM, brand, voice, deliverable conventions |
 | lead-engine | `/lead-setup` | Company, ICP, voice, value-adds, signal preferences |
 | bizdev-outreach | `/setup` | Company, positioning, products, target market, voice |
 | weekly-outreach | `/setup-outreach` | ICP, CRM custom properties, cadence tiers, weekly target |
@@ -164,7 +164,7 @@ Each plugin manages its own issues:
 - [news-curator](https://github.com/BrightWayAI/news-curator/issues)
 - [plan-tomorrow](https://github.com/BrightWayAI/plan-tomorrow/issues)
 - [project-setup](https://github.com/BrightWayAI/project-setup/issues)
-- [brightway-core](https://github.com/BrightWayAI/core/issues)
+- [core-ops](https://github.com/BrightWayAI/core-ops/issues)
 - [weekly-alignment](https://github.com/BrightWayAI/weekly-alignment/issues)
 
 For marketplace-level issues (manifest problems, install errors, discovery), use [BrightWayAI/claude-plugins](https://github.com/BrightWayAI/claude-plugins/issues).
