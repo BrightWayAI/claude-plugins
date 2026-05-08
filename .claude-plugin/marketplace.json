@@ -85,6 +85,15 @@
       },
       "description": "End-to-end client engagement initialization. Interviews you about a new engagement, then produces Drive folder structure, Claude Project system prompt, phased project plan with immediate next step, and a memory node (if claude-cortex is installed). Templates are user-customizable for your offerings. Configurable per user via /setup-projects.",
       "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "time-tracking",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/time-tracking"
+      },
+      "description": "Calendar-driven time tracking and monthly invoice generation. /track-time pulls calendar events, classifies billable time per client, logs to ~/Documents/Claude/time-log.csv. /generate-invoices reads the log, applies each client's billing model, drafts invoices ready for delivery. Closes the calendar-to-money loop. Configurable per user via /setup-time.",
+      "author": { "name": "BrightWay AI" }
     }
   ]
 }
