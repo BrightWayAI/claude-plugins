@@ -40,6 +40,24 @@
       },
       "description": "Weekly cross-team alignment scanner. Monitors Slack channels for overlapping initiatives, conflicting priorities, and decisions that affect other teams — then delivers a Monday morning brief.",
       "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "brightway-core",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/core"
+      },
+      "description": "Generic business-ops toolkit. Pipeline Analyst (subagent) ranks your CRM pipeline by recency × signal × stage. Deliverable Reviewer (slash command) runs a structured QA pass on client decks/docs/spreadsheets against your brand guide. Configurable per user via /setup-core.",
+      "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "news-curator",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/news-curator"
+      },
+      "description": "Curate and draft a weekly LinkedIn news roundup. News Curator (subagent) scans newsletters and the open web for the week's most important stories ranked for your audience. Post Assembler (subagent) drafts the post in your voice. Configurable per user via /setup-news.",
+      "author": { "name": "BrightWay AI" }
     }
   ]
 }
