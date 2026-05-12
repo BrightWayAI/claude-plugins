@@ -112,6 +112,15 @@
       },
       "description": "Latent revenue engine. /referrals produces a weekly digest of connectors gone quiet, recent positive moments worth following up, fiscal-year and seasonal triggers — caps at top 3 actions for the week. /referral-ask drafts a voice-faithful ask for a specific connector. Honors cooling periods. Configurable per user via /setup-referrals.",
       "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "writing-style",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/writing-style"
+      },
+      "description": "Adaptive writing-style plugin. Learns your voice from real edits over time. /style drafts in your voice (email, social, doc, dm); never sends directly. /style-learn analyzes draft-vs-final diffs with two-stage triage — updates style files only after 2+ pattern recurrences. /style-review audits style files for contradictions and stale rules. Companion to cortex's /setup-voice — one-time capture + continuous learning.",
+      "author": { "name": "BrightWay AI" }
     }
   ]
 }

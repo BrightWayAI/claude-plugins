@@ -41,6 +41,7 @@ The marketplace contains 12 plugins, each in its own GitHub repo:
 | project-setup | BrightWayAI/project-setup | New-engagement initialization |
 | time-tracking | BrightWayAI/time-tracking | Calendar → time-log → invoices |
 | weekly-alignment | BrightWayAI/weekly-alignment | Slack cross-team alignment scanner |
+| writing-style | BrightWayAI/writing-style | Adaptive voice learning — drafts, edit-detection, pattern-based style-guide refinement |
 
 Each plugin has its own repo with `commands/`, `skills/`, `agents/`, `references/`, `CHANGELOG.md`, `SECURITY.md`, `LICENSE`. Local dev clones live as siblings to this marketplace repo in `~/lab-bench/`.
 
