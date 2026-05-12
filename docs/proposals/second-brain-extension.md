@@ -58,7 +58,7 @@ Apply this across all 12 plugins' Step 0 blocks. Single perl pass; 5 minutes of 
 
 ### 2.2 Config root convention (already established by the v0.2 refactor)
 
-- Pointer file: `~/.claude-plugin-config-root` (single-line text, contains absolute path of user-chosen config root)
+- Pointer file: `~/Documents/.claude-plugin-config-root` (single-line text, contains absolute path of user-chosen config root)
 - Layout:
   ```
   <config-root>/
@@ -663,7 +663,7 @@ Rough sizing assuming Claude Code with the existing plugin source already cloned
 1. ✅ All 12 plugins at v0.2.1 / v4.1.1 / v1.4.1 with config-root refactor complete (already done as of 2026-05-11).
 2. ✅ Marketplace at `BrightWayAI/claude-plugins` pushed and discoverable.
 3. ⏳ Step 0 Claude Code compatibility fix (pre-cursor to this spec, but small).
-4. ⏳ User has `~/.claude-plugin-config-root` populated and at least cortex's `/setup-identity` has run successfully.
+4. ⏳ User has `~/Documents/.claude-plugin-config-root` populated and at least cortex's `/setup-identity` has run successfully.
 5. ⏳ At least one of: HubSpot (or another CRM connector), Gmail, calendar connector available in the user's setup (otherwise the brief is thin and entity pages don't auto-populate).
 
 ---

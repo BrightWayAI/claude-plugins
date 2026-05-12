@@ -46,7 +46,7 @@ Each plugin has its own repo with `commands/`, `skills/`, `agents/`, `references
 
 ## Config-root convention
 
-All plugins read user-specific config from `<config-root>/`, where `<config-root>` is the path stored in `~/.claude-plugin-config-root` (a single-line text file in the user's home directory, populated on first plugin setup). Layout:
+All plugins read user-specific config from `<config-root>/`, where `<config-root>` is the path stored in `~/Documents/.claude-plugin-config-root` (a single-line text file in the user's home directory, populated on first plugin setup). Layout:
 
 ```
 <config-root>/
