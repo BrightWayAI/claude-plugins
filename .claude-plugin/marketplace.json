@@ -121,6 +121,15 @@
       },
       "description": "Adaptive writing-style plugin. Learns your voice from real edits over time. /style drafts in your voice (email, social, doc, dm); never sends directly. /style-learn analyzes draft-vs-final diffs with two-stage triage — updates style files only after 2+ pattern recurrences. /style-review audits style files for contradictions and stale rules. Companion to cortex's /setup-voice — one-time capture + continuous learning.",
       "author": { "name": "BrightWay AI" }
+    },
+    {
+      "name": "daily-brief",
+      "source": {
+        "source": "github",
+        "repo": "BrightWayAI/daily-brief"
+      },
+      "description": "Live daily working surface as a Cowork artifact. /brief pulls today's calendar, inbox action items, CRM priority tasks, outreach queue, and yesterday's reflection into a single artifact titled \"Today's Brief\" with textarea annotations per item. /process-brief reads the annotations and routes each one — drafts replies in Gmail, reschedules CRM tasks, appends meeting talking points. Two-stage triage keeps cost down. Drafts only — never sends, never marks complete. Phase 1 of the second-brain v2 extension.",
+      "author": { "name": "BrightWay AI" }
     }
   ]
 }

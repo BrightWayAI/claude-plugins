@@ -2,10 +2,12 @@
 
 This is the marketplace repo for the BrightWayAI plugin catalog. The actual plugin source code lives in separate GitHub repos under `BrightWayAI/*`; this repo only holds the catalog manifest (`.claude-plugin/marketplace.json`), the marketplace README, contribution docs, and cross-cutting design proposals.
 
+**Catalog currently lists 14 plugins** (13 originals + daily-brief shipped 2026-05-12 as Phase 1 of the second-brain v2 extension).
+
 ## Layout
 
 ```
-.claude-plugin/marketplace.json   ← the catalog (12 plugins)
+.claude-plugin/marketplace.json   ← the catalog (14 plugins)
 README.md                          ← user-facing marketplace overview
 CONTRIBUTING.md                    ← contributor guide for any plugin
 SECURITY.md / LICENSE              ← standard repo files
@@ -25,7 +27,7 @@ Currently open proposals:
 
 ## How plugins are organized
 
-The marketplace contains 12 plugins, each in its own GitHub repo:
+The marketplace contains 14 plugins, each in its own GitHub repo:
 
 | Plugin | Repo | Purpose |
 |---|---|---|
@@ -42,6 +44,7 @@ The marketplace contains 12 plugins, each in its own GitHub repo:
 | time-tracking | BrightWayAI/time-tracking | Calendar → time-log → invoices |
 | weekly-alignment | BrightWayAI/weekly-alignment | Slack cross-team alignment scanner |
 | writing-style | BrightWayAI/writing-style | Adaptive voice learning — drafts, edit-detection, pattern-based style-guide refinement |
+| daily-brief | BrightWayAI/daily-brief | Live daily working surface as a Cowork artifact. /brief pulls calendar/inbox/CRM/outreach; /process-brief acts on textarea annotations. Phase 1 of second-brain v2. |
 
 Each plugin has its own repo with `commands/`, `skills/`, `agents/`, `references/`, `CHANGELOG.md`, `SECURITY.md`, `LICENSE`. Local dev clones live as siblings to this marketplace repo in `~/lab-bench/`.
 
@@ -72,3 +75,5 @@ This is the canonical write location for plugin runtime data. Don't write plugin
 ## Recently completed work
 
 - **v0.2 refactor (2026-05-11):** all 12 plugins migrated from plugin-folder-relative paths to `<config-root>/plugins/` paths, eliminating writes to Cowork's read-only mount. See each plugin's CHANGELOG for the v0.2.0 / v0.2.1 entries.
+- **Phase 0 platform-agnostic Step 0 (2026-05-12):** every `request_cowork_directory(...)` call in setup commands is wrapped in a Cowork/Claude-Code conditional so the same plugin source works in both runtimes. All 13 plugin patch versions bumped: cortex 4.1.3, weekly-alignment 1.4.3, writing-style 0.1.1, the rest 0.2.3.
+- **Phase 1 daily-brief plugin (2026-05-12):** new plugin `daily-brief` v0.1.0 shipped — `/brief` builds a Cowork artifact "Today's Brief" with seven annotated sections; `/process-brief` reads the annotations and routes them (drafts/reschedules/talking-points/dismissals). Phase 1 of the second-brain v2 extension; spec at `docs/proposals/SECOND-BRAIN-V2-SPEC.md`. Next phases (inbox-triage, person pages, commit triage, /end-day, guardrails) pending.
