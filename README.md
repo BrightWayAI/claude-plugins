@@ -6,7 +6,7 @@ BrightWay AI's curated marketplace of plugins, agents, and shared memory. Turns 
 
 Compatible with **Cowork (Claude Desktop)** and **Claude Code**.
 
-**14 plugins. 7 subagents. Shared identity and voice. Bidirectional learning (mining + decay). Daily/weekly closing rituals. Telemetry. Schedule library.**
+**13 plugins. 7 subagents. Shared identity and voice. Bidirectional learning (mining + decay). Daily/weekly closing rituals. Telemetry. Schedule library.**
 
 ---
 
@@ -26,7 +26,7 @@ Updates flow automatically — push to a plugin's repo on GitHub → marketplace
 
 ## What's in the marketplace
 
-14 plugins, organized by what they do.
+13 plugins, organized by what they do.
 
 ### Memory & knowledge
 
@@ -59,7 +59,6 @@ Updates flow automatically — push to a plugin's repo on GitHub → marketplace
 
 | Plugin | What it does | Setup |
 |---|---|---|
-| **[plan-tomorrow](https://github.com/BrightWayAI/plan-tomorrow)** | Calendar-first daily planning. Pulls CRM tasks, working memory, and inbox action items, then creates time blocks on your calendar with full context baked in. The calendar IS the plan. | `/setup-plan` |
 | **[project-setup](https://github.com/BrightWayAI/project-setup)** | End-to-end client engagement initialization. Drive folder structure, Claude Project system prompt, phased project plan, memory node — all in one interview. Templates user-customizable. | `/setup-projects` |
 | **[time-tracking](https://github.com/BrightWayAI/time-tracking)** | Calendar-driven time tracking and monthly invoice generation. `/track-time` classifies billable time per client. `/generate-invoices` drafts monthly invoices from the log. Closes the calendar-to-money loop. | `/setup-time` |
 
@@ -68,7 +67,7 @@ Updates flow automatically — push to a plugin's repo on GitHub → marketplace
 | Plugin | What it does | Setup |
 |---|---|---|
 | **[client-status](https://github.com/BrightWayAI/client-status)** | Weekly client status updates auto-drafted from cortex memory, project-setup engagement data, calendar, and CRM. Drafts go for your review and send. Closes the retention loop. | `/setup-status` |
-| **[daily-brief](https://github.com/BrightWayAI/daily-brief)** | Live daily working surface as a Cowork artifact titled "Today's Brief." Pulls calendar, inbox action items, CRM priority tasks, outreach queue, yesterday's reflection — into one annotated view. `/process-brief` reads your textarea instructions and routes them (drafts replies in Gmail, reschedules CRM tasks, appends meeting talking points). Drafts only. | `/setup-brief` |
+| **[daily-brief](https://github.com/BrightWayAI/daily-brief)** | Daily flow plugin. `/brief` is today's working surface as a Cowork artifact (calendar, inbox, CRM, outreach, yesterday's reflection — annotated by you). `/process-brief` routes the annotations to Gmail drafts, CRM reschedules, meeting talking points. `/plan-tomorrow` blocks the next business day on your calendar. Drafts only. As of v0.2.0 absorbs the deprecated plan-tomorrow plugin. | `/setup-brief`, `/setup-plan` |
 
 ### Voice & writing
 
@@ -156,7 +155,7 @@ Memory + Slack alignment scan + daily calendar + deliverable QA + diagnostics.
 
 **Minimum viable starter:** claude-cortex + core-ops. Run `/setup-identity` and `/setup-voice` first. Everything else builds on top.
 
-**The full stack** (all 14 plugins): heavy but durable. The closing rituals (`/end-day`, `/end-week`) are what make compound value real — without them, plugins still work but you carry more in your head.
+**The full stack** (all 13 plugins): heavy but durable. The closing rituals (`/end-day`, `/end-week`) are what make compound value real — without them, plugins still work but you carry more in your head.
 
 ---
 

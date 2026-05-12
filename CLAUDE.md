@@ -6,12 +6,12 @@ The actual plugin source code lives in separate GitHub repos under `BrightWayAI/
 
 **Renamed from `claude-plugins` → `nucleus` on 2026-05-12.** GitHub auto-redirects old URLs. Local directory at `~/lab-bench/nucleus/`.
 
-**Catalog currently lists 14 plugins** (13 originals + daily-brief shipped 2026-05-12 as Phase 1 of the second-brain v2 extension).
+**Catalog currently lists 13 plugins.** Started at 12, gained `writing-style` and `daily-brief`, lost `plan-tomorrow` (folded into daily-brief). Net 13.
 
 ## Layout
 
 ```
-.claude-plugin/marketplace.json   ← the catalog (14 plugins)
+.claude-plugin/marketplace.json   ← the catalog (13 plugins)
 README.md                          ← user-facing marketplace overview
 CONTRIBUTING.md                    ← contributor guide for any plugin
 SECURITY.md / LICENSE              ← standard repo files
@@ -31,7 +31,7 @@ Currently open proposals:
 
 ## How plugins are organized
 
-The marketplace contains 14 plugins, each in its own GitHub repo:
+The marketplace contains 13 plugins, each in its own GitHub repo:
 
 | Plugin | Repo | Purpose |
 |---|---|---|
@@ -42,13 +42,12 @@ The marketplace contains 14 plugins, each in its own GitHub repo:
 | weekly-outreach | BrightWayAI/weekly-outreach | Weekly BD prep |
 | referral-engine | BrightWayAI/referral-engine | Connector network + referral asks |
 | news-curator | BrightWayAI/news-curator | Weekly LinkedIn AI roundup (news-curator + post-assembler subagents) |
-| plan-tomorrow | BrightWayAI/plan-tomorrow | Calendar-first daily planning |
 | client-status | BrightWayAI/client-status | Weekly client status drafts |
 | project-setup | BrightWayAI/project-setup | New-engagement initialization |
 | time-tracking | BrightWayAI/time-tracking | Calendar → time-log → invoices |
 | weekly-alignment | BrightWayAI/weekly-alignment | Slack cross-team alignment scanner |
 | writing-style | BrightWayAI/writing-style | Adaptive voice learning — drafts, edit-detection, pattern-based style-guide refinement |
-| daily-brief | BrightWayAI/daily-brief | Live daily working surface as a Cowork artifact. /brief pulls calendar/inbox/CRM/outreach; /process-brief acts on textarea annotations. Phase 1 of second-brain v2. |
+| daily-brief | BrightWayAI/daily-brief | Daily flow plugin. /brief = today's working surface (Cowork artifact); /process-brief acts on annotations; /plan-tomorrow blocks the next business day. As of v0.2.0 absorbs the deprecated plan-tomorrow plugin. |
 
 Each plugin has its own repo with `commands/`, `skills/`, `agents/`, `references/`, `CHANGELOG.md`, `SECURITY.md`, `LICENSE`. Local dev clones live as siblings to this marketplace repo in `~/lab-bench/`.
 
@@ -85,3 +84,4 @@ This is the canonical write location for plugin runtime data. Don't write plugin
 - **Known design note:** `daily-brief` and `plan-tomorrow` overlap significantly on data sources (calendar / CRM / inbox / cortex). Different verbs (`/brief` = today's working surface with annotations + `/process-brief` action loop; `/plan-tomorrow` = tomorrow's calendar blocks). Decision to keep both was deferred — revisit once both are in daily use.
 - **cortex v4.3.0 — `/end-day` mining layer (2026-05-12):** three read-only agents at Step 2a (`transcript-reviewer` expanded to two output streams, `conversation-miner` new, `activity-miner` new — scoped to events). Source-agnostic via adapter pattern at `agents/lib/note-source-adapters.md` (Granola / Gemini / Fireflies / Otter / Notion / generic Drive / generic Gmail / custom). Step 2b unified review gate with high-confidence-only toggle, auto-expanded cross-refs, dismissal log. Domain-node Scope convention via one-time migration in `/end-day` Pre-chain B (generic detection, no hardcoded names). New `/setup-sources` command with mandatory adapter health-check. `code-miner` deferred. `[confirmed/recalled]` substrate tags added on knowledge entries.
 - **cortex v4.4.0 — forgetting / decay layer (2026-05-12):** the other half of the bidirectional second-brain. Decay model with four states (Fresh / Stale / Dormant / Cold) driven by `[confirmed:...]` age. Defaults at `<config-root>/memory/.decay-config.md` (60/180/365 days; GOTCHA and RECIPE decay 1.5× slower; CORRECTION immune). Per-node `decay_profile: fast | normal | slow` front-matter override. `/recall` flags aging entries inline and offers recall-time triage (re-confirm / demote / archive). `/remember` runs concept-drift detection on new INSIGHT/MODEL/GOTCHA/LESSON writes (Haiku-tier) and prompts the user on supersede/keep-both/edit/skip. New `/rehearse` command + skill: active retention loop, picks 3-5 aging entries weekly via `/end-week` Step 3.5. `/cleanup` deepened with section I for dormant knowledge and section H for cooling/dormant/cold-archive person pages (auto-archive to `memory/person/archive/`). `memory-librarian` ranks Fresh higher and skips `## Demoted knowledge` by default. Content is never auto-deleted; every transition is user-gated.
+- **Nucleus visibility + consolidation (2026-05-12):** core-ops 0.2.3 → 0.3.0 — new `/nucleus-status` (terse text snapshot) and `/nucleus-dashboard` v1 (Cowork HTML artifact with 6 section cards: stack overview, this-week activity, memory health, outreach pipeline, time+invoicing, impact-loop placeholder). daily-brief 0.1.0 → 0.2.0 — absorbs the deprecated plan-tomorrow plugin (`/plan-tomorrow` + `/setup-plan` now live in daily-brief; user-context backward-compatible). Marketplace catalog count drops 14 → 13. Standalone plan-tomorrow repo deprecated with a redirect README and archived on GitHub.

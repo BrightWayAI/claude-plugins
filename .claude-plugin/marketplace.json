@@ -60,15 +60,6 @@
       "author": { "name": "BrightWay AI" }
     },
     {
-      "name": "plan-tomorrow",
-      "source": {
-        "source": "github",
-        "repo": "BrightWayAI/plan-tomorrow"
-      },
-      "description": "Calendar-first daily planning. Pulls CRM tasks, working memory context, and inbox action items, then creates time blocks on your calendar with full context baked in. The calendar IS the plan. Delegates CRM scoring to pipeline-analyst (core-ops) when installed. Configurable per user via /setup-plan.",
-      "author": { "name": "BrightWay AI" }
-    },
-    {
       "name": "weekly-outreach",
       "source": {
         "source": "github",
@@ -128,7 +119,7 @@
         "source": "github",
         "repo": "BrightWayAI/daily-brief"
       },
-      "description": "Live daily working surface as a Cowork artifact. /brief pulls today's calendar, inbox action items, CRM priority tasks, outreach queue, and yesterday's reflection into a single artifact titled \"Today's Brief\" with textarea annotations per item. /process-brief reads the annotations and routes each one — drafts replies in Gmail, reschedules CRM tasks, appends meeting talking points. Two-stage triage keeps cost down. Drafts only — never sends, never marks complete. Phase 1 of the second-brain v2 extension.",
+      "description": "Daily flow plugin. /brief builds today's working surface as a Cowork artifact (calendar, inbox, CRM tasks, outreach queue, yesterday's reflection — annotated by you). /process-brief routes the annotations (Gmail drafts, CRM reschedules, meeting talking points). /plan-tomorrow blocks the next business day on your calendar with full context baked in. As of v0.2.0 absorbs the deprecated plan-tomorrow plugin. Drafts only — never sends.",
       "author": { "name": "BrightWay AI" }
     }
   ]
