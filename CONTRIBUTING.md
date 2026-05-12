@@ -1,13 +1,13 @@
 # Contributing to BrightWayAI Plugins
 
-Thanks for considering a contribution. This guide covers contributing to any plugin in the [BrightWayAI marketplace](https://github.com/BrightWayAI/claude-plugins).
+Thanks for considering a contribution. This guide covers contributing to any plugin in the [BrightWayAI marketplace](https://github.com/BrightWayAI/nucleus).
 
 The marketplace itself (this repo) is a thin pointer file — almost no contributions land here. **Plugin contributions go to each plugin's individual repo.**
 
 ## Marketplace structure
 
 ```
-BrightWayAI/claude-plugins/         ← this repo (marketplace catalog only)
+BrightWayAI/nucleus/         ← this repo (marketplace catalog only)
   .claude-plugin/marketplace.json   ← lists each plugin and where to find it
   README.md                         ← marketplace overview, install guide
   docs/                             ← cross-cutting docs (e.g., multi-agent patterns)
@@ -33,9 +33,9 @@ BrightWayAI/<plugin-name>/          ← each plugin lives in its own repo
 | Improve a slash command's behavior | the plugin's repo |
 | Add a new subagent to a plugin | the plugin's repo |
 | Update a starter template | the plugin's repo |
-| Add a new plugin to the marketplace | open an issue in `claude-plugins` first to discuss; if accepted, you create the plugin repo and we add the entry to `marketplace.json` |
-| Cross-cutting docs (e.g., orchestration patterns) | `claude-plugins/docs/` |
-| Marketplace manifest fixes (broken plugin entry, etc.) | `claude-plugins` |
+| Add a new plugin to the marketplace | open an issue in `nucleus` first to discuss; if accepted, you create the plugin repo and we add the entry to `marketplace.json` |
+| Cross-cutting docs (e.g., orchestration patterns) | `nucleus/docs/` |
+| Marketplace manifest fixes (broken plugin entry, etc.) | `nucleus` |
 
 ## Workflow
 
@@ -48,7 +48,7 @@ For changes to a specific plugin:
 5. **Update the plugin's CHANGELOG.md** under `## [Unreleased]` describing what changed.
 6. **Update the SECURITY.md** if your change affects what data the plugin reads or writes.
 
-For new plugins: open an issue in `claude-plugins` first — we'd rather agree on scope before you build.
+For new plugins: open an issue in `nucleus` first — we'd rather agree on scope before you build.
 
 ## Conventions across plugins
 
@@ -122,4 +122,4 @@ This is an open project; treat contributions and contributors with respect. Ther
 
 ## Questions?
 
-If you're unsure how to contribute, open an issue in the relevant plugin repo or in `claude-plugins` (for marketplace-level questions). We'd rather have a conversation up front than reject a PR that took you a weekend to write.
+If you're unsure how to contribute, open an issue in the relevant plugin repo or in `nucleus` (for marketplace-level questions). We'd rather have a conversation up front than reject a PR that took you a weekend to write.

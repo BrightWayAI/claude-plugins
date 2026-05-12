@@ -1,17 +1,19 @@
-# BrightWay AI — Claude Plugin Marketplace
+# Nucleus
 
-A curated library of Claude plugins that turn Claude into a daily ops layer for solo operators, consultants, and small teams. Memory, business development, daily planning, time tracking, client retention, news curation, deliverable QA, cross-team alignment — each plugin works on its own, and they get sharper when paired together.
+**The operating core for how AI-powered teams get work done.**
+
+BrightWay AI's curated marketplace of plugins, agents, and shared memory. Turns Claude into the daily operating layer for solo operators, consultants, and teams running an agentic operating model. Memory that learns and forgets, business development, daily planning, time tracking, client retention, news curation, deliverable QA, cross-team alignment — each plugin works on its own, and they get sharper when paired together.
 
 Compatible with **Cowork (Claude Desktop)** and **Claude Code**.
 
-**12 plugins. 6 subagents. Shared identity and voice. Daily/weekly closing rituals. Telemetry. Schedule library.**
+**14 plugins. 7 subagents. Shared identity and voice. Bidirectional learning (mining + decay). Daily/weekly closing rituals. Telemetry. Schedule library.**
 
 ---
 
 ## Install
 
 ```
-/plugin marketplace add BrightWayAI/claude-plugins
+/plugin marketplace add BrightWayAI/nucleus
 ```
 
 Then install plugins individually (see catalog below).
@@ -24,7 +26,7 @@ Updates flow automatically — push to a plugin's repo on GitHub → marketplace
 
 ## What's in the marketplace
 
-12 plugins, organized by what they do.
+14 plugins, organized by what they do.
 
 ### Memory & knowledge
 
@@ -66,6 +68,13 @@ Updates flow automatically — push to a plugin's repo on GitHub → marketplace
 | Plugin | What it does | Setup |
 |---|---|---|
 | **[client-status](https://github.com/BrightWayAI/client-status)** | Weekly client status updates auto-drafted from cortex memory, project-setup engagement data, calendar, and CRM. Drafts go for your review and send. Closes the retention loop. | `/setup-status` |
+| **[daily-brief](https://github.com/BrightWayAI/daily-brief)** | Live daily working surface as a Cowork artifact titled "Today's Brief." Pulls calendar, inbox action items, CRM priority tasks, outreach queue, yesterday's reflection — into one annotated view. `/process-brief` reads your textarea instructions and routes them (drafts replies in Gmail, reschedules CRM tasks, appends meeting talking points). Drafts only. | `/setup-brief` |
+
+### Voice & writing
+
+| Plugin | What it does | Setup |
+|---|---|---|
+| **[writing-style](https://github.com/BrightWayAI/writing-style)** | Adaptive writing-style plugin. Learns your voice from real edits over time. `/style` drafts in your voice (email, social, doc, dm). `/style-learn` analyzes draft-vs-final diffs with two-stage triage. `/style-review` audits style files for contradictions and stale rules. | `/setup-style` |
 
 ### Cross-team & toolkit
 
@@ -147,7 +156,7 @@ Memory + Slack alignment scan + daily calendar + deliverable QA + diagnostics.
 
 **Minimum viable starter:** claude-cortex + core-ops. Run `/setup-identity` and `/setup-voice` first. Everything else builds on top.
 
-**The full stack** (all 12 plugins): heavy but durable. The closing rituals (`/end-day`, `/end-week`) are what make compound value real — without them, plugins still work but you carry more in your head.
+**The full stack** (all 14 plugins): heavy but durable. The closing rituals (`/end-day`, `/end-week`) are what make compound value real — without them, plugins still work but you carry more in your head.
 
 ---
 
@@ -239,8 +248,10 @@ Each plugin manages its own issues:
 - [client-status](https://github.com/BrightWayAI/client-status/issues)
 - [referral-engine](https://github.com/BrightWayAI/referral-engine/issues)
 - [weekly-alignment](https://github.com/BrightWayAI/weekly-alignment/issues)
+- [writing-style](https://github.com/BrightWayAI/writing-style/issues)
+- [daily-brief](https://github.com/BrightWayAI/daily-brief/issues)
 
-For marketplace-level issues (manifest problems, install errors, discovery), use [BrightWayAI/claude-plugins](https://github.com/BrightWayAI/claude-plugins/issues).
+For marketplace-level issues (manifest problems, install errors, discovery), use [BrightWayAI/nucleus](https://github.com/BrightWayAI/nucleus/issues).
 
 ---
 

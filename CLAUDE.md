@@ -1,6 +1,10 @@
-# Claude Code project notes — BrightWayAI plugin marketplace
+# Claude Code project notes — Nucleus
 
-This is the marketplace repo for the BrightWayAI plugin catalog. The actual plugin source code lives in separate GitHub repos under `BrightWayAI/*`; this repo only holds the catalog manifest (`.claude-plugin/marketplace.json`), the marketplace README, contribution docs, and cross-cutting design proposals.
+This is the marketplace repo for **Nucleus — BrightWay AI's curated marketplace of plugins, agents, and shared memory. Tagline: "The operating core for how AI-powered teams get work done."**
+
+The actual plugin source code lives in separate GitHub repos under `BrightWayAI/*`; this repo only holds the catalog manifest (`.claude-plugin/marketplace.json`), the marketplace README, contribution docs, and cross-cutting design proposals.
+
+**Renamed from `claude-plugins` → `nucleus` on 2026-05-12.** GitHub auto-redirects old URLs. Local directory at `~/lab-bench/nucleus/`.
 
 **Catalog currently lists 14 plugins** (13 originals + daily-brief shipped 2026-05-12 as Phase 1 of the second-brain v2 extension).
 

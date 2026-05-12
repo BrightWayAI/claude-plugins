@@ -1,6 +1,6 @@
 {
-  "name": "claude-plugins",
-  "description": "Plugins built by BrightWay AI.",
+  "name": "nucleus",
+  "description": "Nucleus — the operating core for how AI-powered teams get work done. BrightWay AI's curated marketplace of plugins, agents, and shared memory.",
   "owner": {
     "name": "BrightWay AI"
   },
